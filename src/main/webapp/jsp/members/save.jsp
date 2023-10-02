@@ -26,6 +26,17 @@
   <li>id=<%=member.getId()%></li>
   <li>username=<%=member.getUsername()%></li>
   <li>age=<%=member.getAge()%></li>
+
+  <!-- 같은 결과인 다른 방법 1
+  <li>id=<%=((Member)request.getAttribute("member")).getId()%></li>
+  <li>username=<%=((Member)request.getAttribute("member")).getUsername()%></li>
+  <li>age=<%=((Member)request.getAttribute("member")).getAge()%></li> -->
+
+  <!-- 같은 결과인 다른 방법 2
+  <li>id=${member.id}</li>
+  <li>username=${member.username}</li>
+  <li>age=${member.age}</li> -->
+
 </ul>
 <a href="/index.html">메인</a>
 </body>
