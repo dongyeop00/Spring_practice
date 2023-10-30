@@ -11,4 +11,5 @@ import java.io.IOException;
 public interface ControllerV2 {
 
     MyView process(HttpServletRequest request, HttpServletResponse response) throws SerialException, IOException, ServletException;
+
 }

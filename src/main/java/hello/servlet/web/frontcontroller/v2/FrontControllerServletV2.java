@@ -20,18 +20,17 @@ public class FrontControllerServletV2 extends HttpServlet {
 
     private Map<String, ControllerV2> controllerMap = new HashMap<>();
 
-    public FrontControllerServletV2(){
+    public FrontControllerServletV2() {
         controllerMap.put("/front-controller/v2/members/new-form", new MemberFormControllerV2());
         controllerMap.put("/front-controller/v2/members/save", new MemberSaveControllerV2());
         controllerMap.put("/front-controller/v2/members", new MemberListControllerV2());
     }
-
     @SneakyThrows
     @Override
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        System.out.println("FrontControllerServletV2.service");
 
-        // /front-controller/v2/members
+        System.out.println("FrontControllerServletV2 실행 완료");
+
         String requestURI = request.getRequestURI();
 
         ControllerV2 controller = controllerMap.get(requestURI);
@@ -40,10 +39,7 @@ public class FrontControllerServletV2 extends HttpServlet {
             return;
         }
 
-        // new MyView("/WEB-INF/views/new-form.jsp");
         MyView view = controller.process(request,response);
-        view.render(request, response);
-
-
+        view.render(request,response);
     }
 }

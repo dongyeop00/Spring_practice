@@ -13,16 +13,8 @@ import java.io.IOException;
 public class MemberFormControllerV2 implements ControllerV2 {
     @Override
     public MyView process(HttpServletRequest request, HttpServletResponse response) throws SerialException, IOException, ServletException {
-        /*
-        String viewPath = "/WEB-INF/views/new-form.jsp";
-        RequestDispatcher dispatcher = request.getRequestDispatcher(viewPath);
-        dispatcher.forward(request, response);
-        */
-        // ↓ 같은 코드
-
-        // MyView myView = new MyView("/WEB-INF/views/new-form.jsp");
-        // return myView;
-        // ↓ 같은 코드 (ctrl + alt + n )
+        //new MyView("/WEB-INF/views/new-form.jsp");
+        //return MyView;
         return new MyView("/WEB-INF/views/new-form.jsp");
     }
 }

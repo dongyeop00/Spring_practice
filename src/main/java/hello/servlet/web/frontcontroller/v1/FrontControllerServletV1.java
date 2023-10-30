@@ -20,11 +20,10 @@ public class FrontControllerServletV1 extends HttpServlet {
     private Map<String, ControllerV1> controllerMap = new HashMap<>();
     // Map<매핑 url, 호출될 controller>
 
-    public FrontControllerServletV1() {
+    public FrontControllerServletV1() { //
         controllerMap.put("/front-controller/v1/members/new-form", new MemberFormControllerV1());
         controllerMap.put("/front-controller/v1/members/save", new MemberSaveControllerV1());
         controllerMap.put("/front-controller/v1/members", new MemberListControllerV1());
-
     }
 
     @SneakyThrows
